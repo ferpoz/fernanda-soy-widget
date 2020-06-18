@@ -43,6 +43,22 @@ class Fernanda_Soy_Widget extends WP_Widget
 
     public function widget($args, $instance)
     {
+        extract( $args );
+        echo $before_widget;        
+        echo $before_title . 'Noticias en Fernanda Soy' . $after_title; 
+
+        $noticias = "";
+        $url = "https://fernandafamiliar.soy/wp-json/wp/v2/posts";
+        $response = file_get_contents($url);
+        if ($response) 
+        {
+            $response = json_decode($response,true);
+            foreach($response as $noticia) {
+                $noticias .= "<li>".$noticia["title"]["rendered"]."</li>";
+            }
+            $noticias = "<ul>$noticias</ul>";
+        }
+        echo $noticias;
     }
 }
 function register_fernanda_soy_widget()
