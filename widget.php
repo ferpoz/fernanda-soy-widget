@@ -53,10 +53,20 @@ class Fernanda_Soy_Widget extends WP_Widget
         if ($response) 
         {
             $response = json_decode($response,true);
+            $fecha = new DateTime($noticia["date"]);
+            $modificacion = new DateTime($noticia["modified"]);
+
             foreach($response as $noticia) {
-                $noticias .= "<li>".$noticia["title"]["rendered"]."</li>";
+                $noticias .= "<div style=\"margin-top:15px\">"
+                            . "<div style=\"width: 100%; margin-bottom: 5px;\">"
+                            . "<img src=\"" . $noticia["jetpack_featured_media_url"]."\" style=\"height: auto; width: 100%;\"></div>"
+                            . "<a href=\"" . $noticia["link"] . "\" target=\"_blank\" style=\"font-weight: 700; text-decoration: none;\">". $noticia["title"]["rendered"] . "</a><br>"
+                            . "<span style=\"font-size: 0.6em; font-weight: 600\">Publicación: " . $fecha->format("M, j Y H:i")
+                            . " - Modificación: " . $fecha->format("M, j Y H:i") . "</span><br>"
+                            . $noticia["excerpt"]["rendered"]
+                            . "</div>";
             }
-            $noticias = "<ul>$noticias</ul>";
+            // $noticias = "<ul>$noticias</ul>";
         }
         echo $noticias;
     }
