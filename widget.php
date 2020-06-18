@@ -23,10 +23,22 @@ class Fernanda_Soy_Widget extends WP_Widget
 
     public function form($instance)
     {
+        $defaults = [
+            'depth' => -1
+        ];
+        $depth = $instance['depth']; ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'depth' ); ?>">Profundidad:</label>
+            <input class="widefat" type="text" id="<?php echo $this->get_field_id( 'depth' ); ?>" name="<?php echo $this->get_field_name( 'depth' ); ?>" value="<?php echo esc_attr( $depth ); ?>">
+        </p>
+        <?php
     }
 
     public function update($new_instance, $old_instance)
     {
+        $instance = $old_instance;
+        $instance[ 'depth' ] = strip_tags( $new_instance[ 'depth' ] );
+        return $instance;
     }
 
     public function widget($args, $instance)
