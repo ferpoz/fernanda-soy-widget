@@ -22,7 +22,16 @@
 
 1. Ir a la carpeta _**fernanda-soy-widget**_ recién creada.
 1. Crear BD de wordpress con el archivo noticias.sql.
-1. Crear el usuario admin\_noticias en la BD (MySQL o MariaDB) con la contraseña _1W8ZOi5pS!Se_.
+1. Crear el usuario admin\_noticias en la BD (MySQL o MariaDB) con la contraseña _1W8ZOi5pS!Se_.  
+
+    ```sql
+    -- Código de ejemplo para crear usuario en MySQL
+    CREATE USER 'admin_noticias'@'localhost' IDENTIFIED BY '1W8ZOi5pS!Se';
+    SET PASSWORD FOR 'admin_noticias'@'localhost' = '1W8ZOi5pS!Se';
+    GRANT ALL PRIVILEGES ON noticias.* TO 'admin_noticias'@'localhost';
+    FLUSH PRIVILEGES;
+    ```
+
 1. Copiar archivo de configuración _**wp-config.php**_ a la carpeta _**noticias**_.
 1. Usar el navegador para ir a la URL _**<http://localhost/noticias>**_  
 
