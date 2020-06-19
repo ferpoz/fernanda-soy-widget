@@ -15,10 +15,10 @@
 1. Renombrar la carpeta de Wordpress a _**noticias**_.
 1. Ir a la carpeta _**noticias/wp-content/plugins**_ y clonar el repositorio del plugin.
 
-```bash
-cd noticias/wp-content/plugins
-git clone https://github.com/ferpoz/fernanda-soy-widget.git
-```
+    ```bash
+    cd noticias/wp-content/plugins
+    git clone https://github.com/ferpoz/fernanda-soy-widget.git
+    ```
 
 1. Ir a la carpeta _**fernanda-soy-widget**_ recién creada.
 1. Crear BD de wordpress con el archivo noticias.sql.
