@@ -33,6 +33,5 @@
     ```
 
 1. Copiar archivo de configuración _**wp-config.php**_ a la carpeta _**noticias**_.
-1. Usar el navegador para ir a la URL _**<http://localhost/noticias>**_  
-
-Las 10 últimas noticias aparecerán en el pie de página 2.
+1. Usar el navegador para ir a la URL _**<http://localhost/noticias>**_. Las 10 últimas noticias aparecerán en el pie de página 2.
+1. También es posible ver la prueba en la URL  _**<https://dev.strichpunkt.io/noticias>**_.
